@@ -1,7 +1,7 @@
-// Event listener for the search button
+
 document.getElementById('search-btn').addEventListener('click', function () {
     const city = document.getElementById('city-input').value;
-    const apiKey = 'be9b15d598d98e8695ca3b488f981ec0'; // Replace with your OpenWeatherMap API key
+    const apiKey = 'be9b15d598d98e8695ca3b488f981ec0'; // OpenWeatherMap API key
   
     // Validate input to ensure city name is provided
     if (!city) {
@@ -33,7 +33,7 @@ document.getElementById('search-btn').addEventListener('click', function () {
     const weatherInfo = document.getElementById('weather-info');
     weatherInfo.classList.remove('hidden');
   
-    // Update the UI with the fetched weather data
+    
     document.getElementById('city-name').textContent = `Weather in ${data.name}, ${data.sys.country}`;
     document.getElementById('temperature').textContent = `Temperature: ${data.main.temp}°C`;
     document.getElementById('description').textContent = `Condition: ${data.weather[0].description}`;
@@ -53,7 +53,6 @@ document.getElementById('search-btn').addEventListener('click', function () {
   // Function to change the background based on weather condition
   function changeBackground(weatherCondition) {
     const body = document.body;
-    // Match weather condition to appropriate background
     switch (weatherCondition.toLowerCase()) {
       case 'clear':
         body.style.background = 'linear-gradient(to right, #56ccf2, #2f80ed)';
